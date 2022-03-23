@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextView" />
+
+    <style name="Toolbar" parent="TextView">
+        <item name="titleTextColor">?attr/fontColorReverse</item>
+        <item name="android:background">?attr/colorSecondaryVariant</item>
+    </style>
+
+    <style name="NavGraph" />
+
+    <style name="NavGraph.Label" parent="TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">?attr/fontColor</item>
+    </style>
+
+    <style name="NavGraph.Detail" parent="TextView">
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="NavGraph.Button">
+        <item name="android:layout_margin">30dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">?attr/colorSecondaryVariant</item>
+        <item name="android:textColor">?attr/fontColorReverse</item>
+    </style>
+
+    <style name="NavGraph.SubButton">
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">?attr/colorSecondaryVariant</item>
+        <item name="android:textColor">?attr/fontColorReverse</item>
+    </style>
+</resources>
