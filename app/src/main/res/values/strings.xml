@@ -9,5 +9,10 @@
     <string name="nav_graph_home_c_sub_title">NavGraph Home C Sub</string>
     <string name="nav_graph_home_c_title">NavGraph Home C</string>
     <string name="nav_graph_home_d_title">NavGraph Home D</string>
+    <string name="topic_home">Home</string>
+    <string name="home_tab_a">A Screen</string>
+    <string name="home_tab_b">B Screen</string>
+    <string name="home_tab_c">C Screen</string>
+    <string name="home_tab_d">D Screen</string>
     <string name="topic_navigation_component">Navigation Component</string>
 </resources>

@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ascendcorp.androidtechpoc.R
 import com.ascendcorp.androidtechpoc.databinding.ActivityMainBinding
+import com.ascendcorp.androidtechpoc.screen.home.HomeActivity
 import com.ascendcorp.androidtechpoc.screen.navgraph.NavGraphActivity
 
 class MainActivity : AppCompatActivity() {
@@ -27,11 +28,23 @@ class MainActivity : AppCompatActivity() {
             adapter = TopicAdapter().apply { topics = getTopics() }
             layoutManager = LinearLayoutManager(context)
         }
+
+        startActivity(Intent(this, HomeActivity::class.java))
     }
 
     private fun getTopics(): List<TopicUiModel> {
         return listOf(
+            getHomeTopic(),
             getNavigationComponentTopic()
+        )
+    }
+
+    private fun getHomeTopic(): TopicUiModel {
+        return TopicUiModel(
+            titleRes = R.string.topic_home,
+            listener = {
+                startActivity(Intent(this, HomeActivity::class.java))
+            }
         )
     }
 
