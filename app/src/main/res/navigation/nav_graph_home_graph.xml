@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home_graph"
+    app:startDestination="@id/navGraphHomeAFragment">
+
+    <fragment
+        android:id="@+id/navGraphHomeAFragment"
+        android:name="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeAFragment"
+        android:label="@string/nav_graph_home_a_title"
+        tools:layout="@layout/fragment_nav_graph_home_a">
+
+        <deepLink app:uri="androidtechpoc://navgraph/homeA" />
+
+        <action
+            android:id="@+id/action_navGraphHomeAFragment_to_navGraphHomeBFragment"
+            app:destination="@id/navGraphHomeBFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navGraphHomeBFragment"
+        android:name="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeBFragment"
+        android:label="@string/nav_graph_home_b_title"
+        tools:layout="@layout/fragment_nav_graph_home_b">
+
+        <deepLink app:uri="androidtechpoc://navgraph/homeB" />
+
+        <action
+            android:id="@+id/action_navGraphHomeBFragment_to_navGraphHomeCFragment"
+            app:destination="@id/navGraphHomeCFragment" />
+
+        <action
+            android:id="@+id/action_navGraphHomeBFragment_to_navGraphHomeCSubFragment"
+            app:destination="@id/navGraphHomeCSubFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navGraphHomeCFragment"
+        android:name="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeCFragment"
+        android:label="@string/nav_graph_home_c_title"
+        tools:layout="@layout/fragment_nav_graph_home_c">
+
+        <deepLink app:uri="androidtechpoc://navgraph/homeC" />
+
+        <action
+            android:id="@+id/action_navGraphHomeCFragment_to_navGraphHomeDFragment"
+            app:destination="@id/navGraphHomeDFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navGraphHomeCSubFragment"
+        android:name="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeCSubFragment"
+        android:label="@string/nav_graph_home_c_sub_title"
+        tools:layout="@layout/fragment_nav_graph_home_c_sub">
+
+        <deepLink app:uri="androidtechpoc://navgraph/homeCsub" />
+
+        <action
+            android:id="@+id/action_navGraphHomeCSubFragment_to_navGraphHomeDFragment"
+            app:destination="@id/navGraphHomeDFragment"
+            app:popUpTo="@id/navGraphHomeCSubFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navGraphHomeDFragment"
+        android:name="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeDFragment"
+        android:label="@string/nav_graph_home_d_title"
+        tools:layout="@layout/fragment_nav_graph_home_d">
+
+        <deepLink app:uri="androidtechpoc://navgraph/homeD/{displayText}" />
+
+        <argument
+            android:name="displayText"
+            android:defaultValue="Unavailable"
+            app:argType="string" />
+
+        <argument
+            android:name="bundle"
+            android:defaultValue="@null"
+            app:argType="com.ascendcorp.androidtechpoc.screen.navgraph.home.NavGraphHomeDBundle"
+            app:nullable="true" />
+
+    </fragment>
+
+</navigation>

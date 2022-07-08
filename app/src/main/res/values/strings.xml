@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">android-tech-poc</string>
+    <string name="app_scheme">androidtechpoc</string>
+    <string name="nav_graph_home_a_title">NavGraph Home A</string>
+    <string name="nav_graph_home_action">Navigate</string>
+    <string name="nav_graph_home_action_sub">Navigate to sub-destination</string>
+    <string name="nav_graph_home_b_title">NavGraph Home B</string>
+    <string name="nav_graph_home_back_action">Back</string>
+    <string name="nav_graph_home_c_sub_title">NavGraph Home C Sub</string>
+    <string name="nav_graph_home_c_title">NavGraph Home C</string>
+    <string name="nav_graph_home_d_title">NavGraph Home D</string>
+    <string name="topic_navigation_component">Navigation Component</string>
+</resources>
