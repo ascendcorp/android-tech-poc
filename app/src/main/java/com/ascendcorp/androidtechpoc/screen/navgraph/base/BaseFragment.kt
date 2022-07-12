@@ -42,10 +42,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     abstract fun bindViewEvents()
 
-    open fun displayError(error: Throwable) {
-        // TODO : display error message
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

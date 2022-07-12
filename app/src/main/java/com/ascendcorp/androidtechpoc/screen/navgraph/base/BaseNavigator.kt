@@ -20,23 +20,20 @@ interface BaseNavigator {
 
     fun navigateToDestinationByDeepLink(
         destinationId: Int,
-        bundle: Pair<String, Parcelable?> = Pair("bundle", null)
+        bundle: Pair<String, Parcelable?> = Pair(BUNDLE, null)
     )
 }
 
 abstract class BaseNavigatorImpl(
-    protected val fragment: Fragment
+    private val fragment: Fragment
 ) : BaseNavigator {
 
     private var navController: NavController? = null
 
     override fun findNavController(): NavController? {
         return navController ?: try {
-            fragment.findNavController().apply {
-                navController = this
-            }
+            fragment.findNavController().also { navController = it }
         } catch (e: IllegalStateException) {
-            // Log Crashlytics as non-fatal for monitoring
             null
         }
     }
@@ -50,11 +47,11 @@ abstract class BaseNavigatorImpl(
     }
 
     protected fun unsupportedNavigation() {
-        val navController = findNavController()
-        val currentGraph = fragment.requireActivity().getResourceName(navController?.graph?.id)
-        val currentDestination =
-            fragment.requireActivity().getResourceName(navController?.currentDestination?.id)
-        handleError(RuntimeException("Unsupported navigation on $currentGraph at $currentDestination"))
+        val (currentGraph, currentDestination) = with(fragment.requireActivity()) {
+            getResourceName(navController?.graph?.id) to
+                getResourceName(navController?.currentDestination?.id)
+        }
+        throw UnsupportedOperationException("$currentGraph at $currentDestination")
     }
 
     override fun navigateToDestinationByDeepLink(
@@ -74,13 +71,6 @@ abstract class BaseNavigatorImpl(
                 .send()
         } ?: unsupportedNavigation()
     }
-
-
-    private fun handleError(error: Throwable) {
-        if (fragment is BaseFragment<*>) {
-            fragment.displayError(error)
-        } else {
-            throw error
-        }
-    }
 }
+
+internal const val BUNDLE = "bundle"
