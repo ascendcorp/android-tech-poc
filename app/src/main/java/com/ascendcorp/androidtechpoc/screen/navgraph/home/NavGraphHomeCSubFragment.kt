@@ -30,8 +30,8 @@ class NavGraphHomeCSubFragment : BaseFragment<FragmentNavGraphHomeCSubBinding>()
             NORMAL -> {
                 val directions = NavGraphHomeCSubFragmentDirections
                     .actionNavGraphHomeCSubFragmentToNavGraphHomeDFragment(
-                        DISPLAY_TEXT,
-                        NavGraphHomeDBundle(
+                        displayText = DISPLAY_TEXT,
+                        bundle = NavGraphHomeDBundle(
                             findNavController().currentDestination?.id.toString(),
                             findNavController().currentDestination?.label.toString()
                         )

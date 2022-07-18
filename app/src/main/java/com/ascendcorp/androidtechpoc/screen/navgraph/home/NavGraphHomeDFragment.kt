@@ -18,10 +18,10 @@ class NavGraphHomeDFragment : BaseFragment<FragmentNavGraphHomeDBinding>() {
         }
 
     override fun bindViewEvents() {
-        binding.tvDisplay.text = buildDisplayText()
+        binding.tvDisplay.text = getDisplayText()
     }
 
-    private fun buildDisplayText(): String {
+    private fun getDisplayText(): String {
         return with(args) {
             bundle?.let {
                 "$displayText\nNavigated from ${it.previousScreen} (${it.previousScreenId})"
