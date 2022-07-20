@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ascendcorp.androidtechpoc.screen.home.motionlayout.customview.CustomMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_home_motion_layout_scene">
+
+    <ImageView
+        android:id="@+id/ivToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondaryVariant"
+        android:src="@drawable/ic_home_a" />
+
+    <ImageView
+        android:id="@+id/ivTab"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondary"
+        android:src="@drawable/ic_home_b" />
+
+    <ImageView
+        android:id="@+id/ivViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimaryVariant"
+        android:src="@drawable/ic_home_c" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_home_content"
+            app:altSrc="@drawable/bg_home_content_collapse" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tvBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:text="@string/home_back_to_content"
+        android:textColor="?attr/fontColor" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/home_bottom_navigation_height" />
+
+    <ImageView
+        android:id="@+id/ivBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimaryVariant"
+        android:src="@drawable/ic_home_d" />
+
+</com.ascendcorp.androidtechpoc.screen.home.motionlayout.customview.CustomMotionLayout>

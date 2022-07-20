@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_home_basic_motion_layout_scene"
+    app:motionDebug="SHOW_ALL">
+
+    <ImageView
+        android:id="@+id/iv1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondaryVariant"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/padding_margin.m"
+        android:src="@drawable/ic_home_a" />
+
+    <ImageView
+        android:id="@+id/iv2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondary"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/padding_margin.m"
+        android:src="@drawable/ic_home_b" />
+
+    <ImageView
+        android:id="@+id/iv2Sub"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/colorSecondary"
+        android:padding="@dimen/padding_margin.m" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gToolbarTabHeight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/home_toolbar_and_tab_height" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:padding="@dimen/padding_margin.m"
+        android:src="@drawable/ic_home_c"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gNavigationBarHeight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/home_tab_height" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

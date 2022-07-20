@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ascendcorp.androidtechpoc.screen.home.main.customview.HomeMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hmlContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/homeBackgroundColor"
+    app:layoutDescription="@xml/activity_home_scene">
+
+    <include
+        android:id="@+id/layHomeToolbar"
+        layout="@layout/layout_home_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tlTab"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/home_tab_height"
+        android:background="?attr/homeBackgroundColor"
+        app:tabIconTint="?attr/homeTabElementColor"
+        app:tabIndicatorColor="?attr/homeTabElementColor"
+        app:tabIndicatorHeight="0dp"
+        app:tabTextAppearance="@style/Home.TabLayout.Text"
+        app:tabTextColor="?attr/homeTabElementColor" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vp2Container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.utils.widget.ImageFilterView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg_home_content"
+            app:altSrc="@drawable/bg_home_content_collapse" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:itemCount="5"
+            tools:listitem="@layout/item_home_content" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:id="@+id/vBottomNavigationBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/fontColorReverse" />
+
+    <include
+        android:id="@+id/layBack"
+        layout="@layout/layout_home_back"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/layBottomNavigation"
+        layout="@layout/layout_home_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</com.ascendcorp.androidtechpoc.screen.home.main.customview.HomeMotionLayout>
