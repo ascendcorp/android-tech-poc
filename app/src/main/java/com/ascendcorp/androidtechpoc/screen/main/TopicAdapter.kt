@@ -7,13 +7,13 @@ import com.ascendcorp.androidtechpoc.databinding.ItemTopicBinding
 
 internal class TopicAdapter : RecyclerView.Adapter<TopicAdapter.TopicViewHolder>() {
 
-    var topics = listOf<TopicUiModel>()
+    var items = listOf<TopicUiModel>()
         set(value) {
             field = value
             notifyDataSetChanged()
         }
 
-    override fun getItemCount(): Int = topics.size
+    override fun getItemCount(): Int = items.size
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TopicViewHolder {
         return TopicViewHolder(
@@ -22,7 +22,7 @@ internal class TopicAdapter : RecyclerView.Adapter<TopicAdapter.TopicViewHolder>
     }
 
     override fun onBindViewHolder(holder: TopicViewHolder, position: Int) {
-        val item = topics[position]
+        val item = items[position]
         with(holder) {
             bindData(item)
             bindEvents(item)
