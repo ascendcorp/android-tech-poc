@@ -10,4 +10,11 @@
     <string name="nav_graph_home_c_title">NavGraph Home C</string>
     <string name="nav_graph_home_d_title">NavGraph Home D</string>
     <string name="topic_navigation_component">Navigation Component</string>
+    <string name="topic_reverse_engineering">Reverse Engineering</string>
+    <string name="topic_reverse_engineering_description">Try to find our suspicious token with the steps below\n
+        1. Build a debug APK of this application.\n
+        2. Find suspicious token in the debug APK with reverse engineering technique.\n
+        3. Build a release APK of this application.\n
+        4. Find suspicious token in the release APK with reverse engineering technique.
+    </string>
 </resources>

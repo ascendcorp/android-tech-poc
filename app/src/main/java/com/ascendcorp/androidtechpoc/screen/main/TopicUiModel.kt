@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.annotation.StringRes
 import com.ascendcorp.androidtechpoc.R
 import com.ascendcorp.androidtechpoc.screen.navgraph.NavGraphActivity
+import com.ascendcorp.androidtechpoc.screen.reverseengineering.ReverseEngineeringActivity
 
 data class TopicUiModel(
     @StringRes val titleRes: Int,
@@ -13,7 +14,8 @@ data class TopicUiModel(
 
 fun Context.getTopics(): List<TopicUiModel> {
     return listOf(
-        getTopic(R.string.topic_navigation_component, NavGraphActivity::class.java)
+        getTopic(R.string.topic_navigation_component, NavGraphActivity::class.java),
+        getTopic(R.string.topic_reverse_engineering, ReverseEngineeringActivity::class.java)
     )
 }
 
