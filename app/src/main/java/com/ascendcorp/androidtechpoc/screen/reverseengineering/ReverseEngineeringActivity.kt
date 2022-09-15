@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import com.ascendcorp.androidtechpoc.databinding.ActivityReverseEngineeringBinding
 import com.ascendcorp.androidtechpoc.screen.navgraph.base.BaseActivity
+import com.ascendcorp.androidtechpoc.screen.reverseengineering.internal.SusClass
 
 class ReverseEngineeringActivity : BaseActivity<ActivityReverseEngineeringBinding>() {
 
@@ -13,10 +14,8 @@ class ReverseEngineeringActivity : BaseActivity<ActivityReverseEngineeringBindin
             ActivityReverseEngineeringBinding.inflate(it)
         }
 
-    private val susToken = "super_sus_token"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(this::class.java.simpleName, susToken)
+        Log.d(this::class.java.simpleName, SusClass.susToken)
     }
 }
