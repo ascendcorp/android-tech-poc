@@ -19,3 +19,14 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# For reverse engineering
+-keep,allowobfuscation class com.ascendcorp.androidtechpoc.screen.reverseengineering.internal.SusClass {
+    *;
+}
+
+-keepnames class com.ascendcorp.androidtechpoc.screen.navgraph.home.*Bundle
+
+-keepclassmembers class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}

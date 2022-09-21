@@ -14,8 +14,10 @@ class ReverseEngineeringActivity : BaseActivity<ActivityReverseEngineeringBindin
             ActivityReverseEngineeringBinding.inflate(it)
         }
 
+    private val susClass = SusClass()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(this::class.java.simpleName, SusClass.susToken)
+        Log.d(this::class.java.simpleName, susClass.getToken())
     }
 }
