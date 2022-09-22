@@ -27,5 +27,5 @@ POC any new technologies to be applied into the real project
 
 - A learning resource for the basic reverse engineering topic
     - Provide a sample application for anyone who are interesting in reverse engineering to explore
-      with some instructions.
+      with some instructions.<br />
       <img src="https://user-images.githubusercontent.com/44750404/191717595-24af34d2-291d-4545-8680-56f580ec6234.jpg" width="250">
