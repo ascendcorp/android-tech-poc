@@ -1,6 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <resources>
     <string name="app_name">android-tech-poc</string>
     <string name="app_scheme">androidtechpoc</string>
+
+    <string name="home_back_to_content">Back</string>
+    <string name="home_bottom_navigation">Bottom Navigation</string>
+    <string name="home_tab_a">A Screen</string>
+    <string name="home_tab_b">B Screen</string>
+    <string name="home_tab_c">C Screen</string>
+    <string name="home_tab_d">D Screen</string>
+
     <string name="nav_graph_home_a_title">NavGraph Home A</string>
     <string name="nav_graph_home_action">Navigate</string>
     <string name="nav_graph_home_action_sub">Navigate to sub-destination</string>
@@ -9,6 +18,10 @@
     <string name="nav_graph_home_c_sub_title">NavGraph Home C Sub</string>
     <string name="nav_graph_home_c_title">NavGraph Home C</string>
     <string name="nav_graph_home_d_title">NavGraph Home D</string>
+
+    <string name="topic_home">Home</string>
+    <string name="topic_home_basic_motion_layout">Basic Motion Layout</string>
+    <string name="topic_home_motion_layout">Home Motion Layout</string>
     <string name="topic_navigation_component">Navigation Component</string>
     <string name="topic_reverse_engineering">Reverse Engineering</string>
     <string name="topic_reverse_engineering_description">Try to find our suspicious token around this page with the steps below\n

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/collapseTab"
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/normal">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:limitBoundsTo="@id/iv3"
+            app:touchAnchorId="@id/iv3"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <Transition
+        android:id="@+id/expandTabToTop"
+        app:constraintSetEnd="@id/expanded"
+        app:constraintSetStart="@id/normal">
+        <OnSwipe
+            app:dragDirection="dragDown"
+            app:limitBoundsTo="@id/iv3"
+            app:touchAnchorId="@id/iv3"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/collapsed"
+        app:deriveConstraintsFrom="@id/normal">
+        <Constraint
+            android:id="@id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            android:translationZ="90dp"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/iv2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_tab_height"
+            app:layout_constraintBottom_toBottomOf="@id/iv1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/normal">
+        <Constraint
+            android:id="@id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/iv2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_tab_height"
+            app:layout_constraintTop_toBottomOf="@id/iv1" />
+        <Constraint
+            android:id="@id/iv2Sub"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv2" />
+        <Constraint
+            android:id="@id/iv3"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            app:layout_constraintTop_toBottomOf="@id/iv2" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/expanded"
+        app:deriveConstraintsFrom="@id/normal">
+        <Constraint
+            android:id="@id/iv1"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            app:layout_constraintBottom_toTopOf="parent" />
+        <Constraint
+            android:id="@id/iv3"
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            app:layout_constraintTop_toBottomOf="@id/gNavigationBarHeight" />
+    </ConstraintSet>
+
+</MotionScene>

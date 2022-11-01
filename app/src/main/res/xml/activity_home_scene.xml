@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        android:id="@+id/loadPage"
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/normal"
+        app:constraintSetStart="@id/loading"
+        app:duration="500"
+        app:transitionFlags="disableIntraAutoTransition" />
+
+    <ConstraintSet
+        android:id="@+id/loading"
+        app:deriveConstraintsFrom="@id/normal">
+        <Constraint
+            android:id="@id/layHomeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            android:visibility="invisible"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/tlTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_tab_height"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@id/layHomeToolbar" />
+        <Constraint
+            android:id="@id/vp2Container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vBottomNavigationBackground" />
+        <Constraint
+            android:id="@id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vBottomNavigationBackground" />
+        <Constraint
+            android:id="@id/layBottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_bottom_navigation_height"
+            android:alpha="80"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <Transition
+        android:id="@+id/collapseViewPager"
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/normal">
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:limitBoundsTo="@id/clContainer"
+            app:onTouchUp="stop"
+            app:touchAnchorId="@id/clContainer"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <Transition
+        android:id="@+id/expandViewPager"
+        app:constraintSetEnd="@id/expanded"
+        app:constraintSetStart="@id/normal">
+        <!-- Workaround to fix nestedScrolling issue with dragDirection="dragUp" -->
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:maxAcceleration="10"
+            app:onTouchUp="autoComplete"
+            app:touchAnchorId="@id/clContainer"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet
+        android:id="@+id/collapsed"
+        app:deriveConstraintsFrom="@id/normal">
+        <Constraint
+            android:id="@id/layHomeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            android:translationZ="90dp"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="-16dp"
+            app:layout_constraintBottom_toTopOf="@id/vBottomNavigationBackground"
+            app:layout_constraintTop_toBottomOf="@id/tlTab" />
+        <Constraint
+            android:id="@id/tlTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_tab_height"
+            app:layout_constraintBottom_toBottomOf="@id/layHomeToolbar" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/normal">
+        <Constraint
+            android:id="@id/layHomeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/tlTab"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_tab_height"
+            app:layout_constraintTop_toBottomOf="@id/layHomeToolbar" />
+        <Constraint
+            android:id="@id/vp2Container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/vBottomNavigationBackground"
+            app:layout_constraintTop_toBottomOf="@id/tlTab" />
+        <Constraint
+            android:id="@id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/vBottomNavigationBackground"
+            app:layout_constraintTop_toBottomOf="@id/tlTab" />
+        <Constraint
+            android:id="@id/vBottomNavigationBackground"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_bottom_navigation_height"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@id/layBack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vBottomNavigationBackground" />
+        <Constraint
+            android:id="@id/layBottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_bottom_navigation_height"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/expanded"
+        app:deriveConstraintsFrom="@id/normal">
+        <Constraint
+            android:id="@id/layHomeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_toolbar_height"
+            app:layout_constraintBottom_toTopOf="parent" />
+        <Constraint
+            android:id="@id/clContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vBottomNavigationBackground" />
+        <Constraint
+            android:id="@id/layBack"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/vBottomNavigationBackground" />
+        <Constraint
+            android:id="@id/layBottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/home_bottom_navigation_height"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </ConstraintSet>
+
+</MotionScene>

@@ -9,7 +9,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
 
     protected abstract val bindingInflater: (LayoutInflater) -> VB
 
-    private lateinit var binding: VB
+    protected lateinit var binding: VB
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,5 +18,9 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
                 .also { binding = it }
                 .root
         )
+
+        setupView()
     }
+
+    open fun setupView() = Unit
 }

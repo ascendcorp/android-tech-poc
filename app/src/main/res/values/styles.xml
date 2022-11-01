@@ -8,6 +8,12 @@
         <item name="android:background">?attr/colorSecondaryVariant</item>
     </style>
 
+    <style name="Home" />
+
+    <style name="Home.TabLayout.Text" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
     <style name="NavGraph" />
 
     <style name="NavGraph.Label" parent="TextView">

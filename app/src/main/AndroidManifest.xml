@@ -44,6 +44,11 @@
             android:name=".screen.reverseengineering.ReverseEngineeringActivity"
             android:exported="false" />
 
+        <activity android:name=".screen.home.list.HomeListActivity" />
+        <activity android:name=".screen.home.motionlayout.HomeBasicMotionLayoutActivity" />
+        <activity android:name=".screen.home.motionlayout.HomeMotionLayoutActivity" />
+        <activity android:name=".screen.home.main.HomeActivity" />
+
     </application>
 
 </manifest>

@@ -2,4 +2,13 @@
 <resources>
     <attr name="fontColor" format="reference" />
     <attr name="fontColorReverse" format="reference" />
+    <attr name="homeBackgroundColor" format="reference"/>
+    <attr name="homeBackgroundColor2nd" format="reference"/>
+    <attr name="homeTabElementColor" format="reference"/>
+
+    <declare-styleable name="CutoutImage">
+        <attr name="bottomCut" format="dimension" />
+        <attr name="endCut" format="dimension" />
+        <attr name="cutoutColor" format="color" />
+    </declare-styleable>
 </resources>
