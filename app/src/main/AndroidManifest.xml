@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ascendcorp.androidtechpoc">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +13,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTechPoc">
+
+        <service
+            android:name=".service.MyVpnService"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <property
+                android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="vpn" />
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.MyVpnService2"
+            android:exported="true"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".service.HelloService" />
 
         <activity
             android:name=".screen.main.MainActivity"
@@ -48,6 +75,7 @@
         <activity android:name=".screen.home.motionlayout.HomeBasicMotionLayoutActivity" />
         <activity android:name=".screen.home.motionlayout.HomeMotionLayoutActivity" />
         <activity android:name=".screen.home.main.HomeActivity" />
+        <activity android:name=".screen.vpn.VpnActivity" />
 
     </application>
 

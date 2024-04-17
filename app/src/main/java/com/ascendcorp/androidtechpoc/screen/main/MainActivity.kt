@@ -1,9 +1,11 @@
 package com.ascendcorp.androidtechpoc.screen.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ascendcorp.androidtechpoc.databinding.ActivityMainBinding
+import com.ascendcorp.androidtechpoc.screen.vpn.VpnActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,6 +19,7 @@ class MainActivity : AppCompatActivity() {
                 .root
         )
         setupView()
+        startActivity(Intent(this, VpnActivity::class.java))
     }
 
     private fun setupView() {
