@@ -1,9 +1,11 @@
 package com.ascendcorp.androidtechpoc.screen.main
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ascendcorp.androidtechpoc.databinding.ActivityMainBinding
+import com.ascendcorp.androidtechpoc.screen.fr.FRActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,5 +26,7 @@ class MainActivity : AppCompatActivity() {
             adapter = TopicAdapter().apply { items = getTopics() }
             layoutManager = LinearLayoutManager(context)
         }
+
+        startActivity(Intent(this, FRActivity::class.java))
     }
 }

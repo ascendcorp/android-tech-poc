@@ -32,4 +32,6 @@
         Bonus\n
         1. Find a deep link to NavGraph Home D page in the release APK with reverse engineering technique.
     </string>
+
+    <string name="topic_fr">fr</string>
 </resources>

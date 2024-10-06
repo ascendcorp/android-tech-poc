@@ -49,6 +49,8 @@
         <activity android:name=".screen.home.motionlayout.HomeMotionLayoutActivity" />
         <activity android:name=".screen.home.main.HomeActivity" />
 
+        <activity android:name=".screen.fr.FRActivity" />
+
     </application>
 
 </manifest>
