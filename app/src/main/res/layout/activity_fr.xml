@@ -39,6 +39,14 @@
             app:layout_constraintTop_toBottomOf="@id/g"
             tools:text="@string/app_name" />
 
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="gone" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.baoyz.widget.PullRefreshLayout

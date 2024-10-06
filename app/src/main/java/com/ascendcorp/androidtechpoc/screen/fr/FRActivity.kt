@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.doOnPreDraw
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -72,11 +73,9 @@ class FRActivity : BaseActivity<ActivityFrBinding>() {
                                 isAnimated = false
                                 setStatusBarColor(window, Color.TRANSPARENT, false)
                                 WindowCompat.setDecorFitsSystemWindows(window, false)
-                                repeat(IMAGE_FILTER_STEP) {
-                                    lifecycleScope.launch { delay(IMAGE_FILTER_DELAY) }
-                                    binding.ifv.crossfade = 100f - ((it + 1) * IMAGE_FILTER_FACTER).toFloat()
-                                }
+                                binding.ifv.crossfade = 0f
                                 binding.tv.setTextColor(Color.WHITE)
+                                binding.v.isVisible = false
                             }
                             animator to onStart
                         }
@@ -87,11 +86,9 @@ class FRActivity : BaseActivity<ActivityFrBinding>() {
                                 isAnimated = true
                                 setStatusBarColor(window, Color.TRANSPARENT, true)
                                 WindowCompat.setDecorFitsSystemWindows(window, false)
-                                repeat(IMAGE_FILTER_STEP) {
-                                    lifecycleScope.launch { delay(IMAGE_FILTER_DELAY) }
-                                    binding.ifv.crossfade = ((it + 1) * IMAGE_FILTER_FACTER).toFloat()
-                                }
+                                binding.ifv.crossfade = 1f
                                 binding.tv.setTextColor(Color.BLACK)
+                                binding.v.isVisible = true
                             }
                             animator to onStart
                         }
@@ -123,8 +120,5 @@ class FRActivity : BaseActivity<ActivityFrBinding>() {
     companion object {
         private const val TRANSLATION_X = "translationX"
         private const val DURATION = 300L
-        private const val IMAGE_FILTER_STEP = 10
-        private const val IMAGE_FILTER_FACTER = 10 // 100/IMAGE_FILTER_STEP
-        private const val IMAGE_FILTER_DELAY = DURATION / IMAGE_FILTER_STEP
     }
 }
