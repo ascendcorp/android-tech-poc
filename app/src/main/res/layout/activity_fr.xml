@@ -53,7 +53,6 @@
             android:id="@+id/rv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/padding_margin.custom"
             tools:itemCount="5"
             tools:listitem="@layout/item_home_content" />
 

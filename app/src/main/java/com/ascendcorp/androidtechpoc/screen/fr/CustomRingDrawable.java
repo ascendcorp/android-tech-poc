@@ -75,7 +75,7 @@ class CustomRingDrawable extends RefreshDrawable {
 
     protected void onBoundsChange(Rect bounds) {
         super.onBoundsChange(bounds);
-        this.mWidth = this.getRefreshLayout().getFinalOffset();
+        this.mWidth = this.getRefreshLayout().getFinalOffset() - dp2px(8);
         this.mHeight = this.mWidth;
         this.mBounds = new RectF((float) (bounds.width() / 2 - this.mWidth / 2), (float) bounds.top, (float) (bounds.width() / 2 + this.mWidth / 2), (float) (bounds.top + this.mHeight));
         this.mBounds.inset((float) this.dp2px(15), (float) this.dp2px(15));
@@ -94,9 +94,9 @@ class CustomRingDrawable extends RefreshDrawable {
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         paint.setColor(Color.BLACK);
-        paint.setTextSize(64f);
+        paint.setTextSize(48f);
         paint.setTextAlign(Paint.Align.CENTER);
-        canvas.drawText("Hello World!", mBounds.centerX(), this.mHeight + dp2px(16), paint);
+        canvas.drawText("Hello World!", mBounds.centerX(), this.mHeight + dp2px(6), paint);
     }
 
     private void drawRing(Canvas canvas) {
