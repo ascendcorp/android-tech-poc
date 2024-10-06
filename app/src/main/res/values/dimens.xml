@@ -6,6 +6,7 @@
     <dimen name="home_toolbar_and_tab_height">140dp</dimen>
     <dimen name="home_toolbar_height">60dp</dimen>
 
+    <dimen name="padding_margin.custom">32dp</dimen>
     <dimen name="padding_margin.l">16dp</dimen>
     <dimen name="padding_margin.m">8dp</dimen>
     <dimen name="padding_margin.s">4dp</dimen>

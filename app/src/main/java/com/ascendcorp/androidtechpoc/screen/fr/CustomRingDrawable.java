@@ -2,6 +2,7 @@ package com.ascendcorp.androidtechpoc.screen.fr;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Rect;
@@ -90,6 +91,12 @@ class CustomRingDrawable extends RefreshDrawable {
             this.updateLevel(this.mLevel);
             this.invalidateSelf();
         }
+
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.BLACK);
+        paint.setTextSize(64f);
+        paint.setTextAlign(Paint.Align.CENTER);
+        canvas.drawText("Hello World!", mBounds.centerX(), this.mHeight + dp2px(16), paint);
     }
 
     private void drawRing(Canvas canvas) {

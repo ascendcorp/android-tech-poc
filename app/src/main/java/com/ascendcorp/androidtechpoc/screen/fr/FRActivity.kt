@@ -115,8 +115,15 @@ class FRActivity : BaseActivity<ActivityFrBinding>() {
                 lifecycleScope.launch {
                     delay(2000)
                     setRefreshing(false)
+//                    binding.rv.updatePadding(top = 0)
                 }
             }
+//            setOnTouchListener { v, event ->
+//                if (v.onTouchEvent(event)) {
+//                    binding.rv.updatePadding(top = resources.getDimensionPixelSize(R.dimen.padding_margin_custom))
+//                }
+//                v.performClick()
+//            }
         }
     }
 
