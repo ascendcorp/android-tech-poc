@@ -14,6 +14,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/app_name" />
 
+    <Button
+        android:id="@+id/bSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:nestedScrollingEnabled="false"
+        android:padding="32dp"
+        android:text="Save me" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvTopic"
         android:layout_width="match_parent"
